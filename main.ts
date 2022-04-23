@@ -30,11 +30,16 @@ function cargardatos(){
         console.log(serie);
         texto += `<tr><td>${serie.id}</td><td>${serie.nombre}</td><td>${serie.productora}</td><td>${serie.seasons}</td>`
       }
+      let numero: number;
+      numero = promedio();
+      let prom: string;
+      prom =`<tr><td> Seasons Average : ${numero}</td></tr>`;
+      texto=texto+prom;
       tbodySeries.innerHTML=texto;
       serietable.appendChild(tbodySeries);
     }
 
-function promedio():Number{
+function promedio():number{
   let prom : number;
  
   prom=0;
@@ -45,9 +50,6 @@ function promedio():Number{
   prom=prom/series.length;
   return prom;
 }
-var nuevoParrafo = document.createElement("p"); // creo el nuevo elemento
-nuevoParrafo.innerText = "PÃ¡rrafo nuevo";
-var nuevoParrafo2 = document.getElementById("promedio")!; // creo el nuevo elemento
-nuevoParrafo2.insertAdjacentElement('afterend',nuevoParrafo);
-nuevoParrafo2.insertAdjacentHTML('afterend','<p id="two">otro parrafo</p>')
+
+
 
